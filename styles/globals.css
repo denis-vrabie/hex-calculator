@@ -290,7 +290,7 @@ a {
   background-color: rgba(8, 182, 5, 0.15);
 }
 
-.nav {
+footer {
   height: 10%;
   display: flex;
   align-items: center;
@@ -300,7 +300,7 @@ a {
 }
 
 
-nav {
+footer > p {
   flex: 1;
   text-align: right;
 }

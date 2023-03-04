@@ -91,9 +91,9 @@ function HexCalculator() {
         </tbody>
       </table>
       </div>
-      <div className='nav'>
-          <nav>Hexidecimal Calculator by ©Denis Vrabie 2023</nav>
-      </div>
+      <footer>
+          <p>Hexidecimal Calculator by Denis Vrabie 2023</p>
+      </footer>
     </div>
   );
 }
