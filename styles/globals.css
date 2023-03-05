@@ -325,7 +325,7 @@ footer > p {
     height: 40px;
   }
   .content-table2 {
-    min-width: 375px;
+    min-width: 100%;
   }
   .content-table2 > thead > tr > th {
     display: none;
@@ -372,7 +372,7 @@ footer > p {
     font-size: 0.8rem;
   }
   .content-table2 {
-    min-width: 320px;
+    min-width: 100%;
   }
   .content-table2 > thead > tr > th {
     display: none;
