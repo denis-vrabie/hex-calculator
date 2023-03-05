@@ -40,7 +40,7 @@ function HexCalculator() {
   const isCellOne = (cellValue) => cellValue === "1";
 
   function handleKeyPress(event) {
-    const validChars = /[1-9a-f]/gi;
+    const validChars = /[0-9a-f]/gi;
     const key = String.fromCharCode(event.keyCode || event.which);
     if (!validChars.test(key)) {
       event.preventDefault();
@@ -51,12 +51,13 @@ function HexCalculator() {
     <div className='container'>
     <Head>
     <title>Hexidecimal Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
       <h1 className='text1'>Hex Calculator</h1>
       <form>
       <div className='input-container'>
-        <input type="text" onKeyPress={handleKeyPress} maxlength="6" id='HexidecimalNumber' autoComplete='off' placeholder='Ender Hexidecimal Number' required className='text-input' value={hex} onChange={handleHexChange} />
-        <label for="Hexidecimal Number" className='label'>Hexidecimal Number</label>
+        <input type="text" onKeyPress={handleKeyPress} maxlength="6" id='HexidecimalNumber' autoComplete='off' required value={hex} onChange={handleHexChange} />
+        <span>Hexidecimal Number</span>
       </div>
       </form>
       <div>
@@ -78,6 +79,7 @@ function HexCalculator() {
       </table>
       </div>
       <div>
+      <h2>Distribution of a binary in the decimal</h2>
       <table className='content-table2'>
         <thead>
           <tr>
@@ -86,7 +88,7 @@ function HexCalculator() {
           </thead>
         <tbody>
           <tr className='active-row2'>
-              {hexToBinary(hex).split('').map((value) => <td className={value === '1' ? 'green' : ''}>{value}</td>)}
+              {hexToBinary(hex).split('').map((value, index) => <td data-label={binaryHead[index]} className={value === '1' ? 'green' : ''}>{value}</td>)}
           </tr>
         </tbody>
       </table>

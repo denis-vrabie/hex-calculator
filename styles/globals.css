@@ -106,7 +106,14 @@ a {
   }
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,67 +129,48 @@ a {
 }
 
 .input-container {
-  width: 100%;
-  max-width: 280px;
   position: relative;
+  width: 280px;
 }
 
-.label {
-  position: absolute;
-  left: 10px;
-  top: 14px;
-  transform: all 0.2s;
-  padding: 0 2px;
-  z-index: 1;
-  color: #b3b3b3;
-}
-
-.text-input {
-  padding: 0.8rem;
+.input-container input {
   width: 100%;
-  height: 100%;
-  border: 2px solid #18eb0942;
+  padding: 0.8rem;
+  border: 2px solid rgba(0, 255, 26, 0.25);
   background: #272530;
   border-radius: 5px;
-  font-size: 18px;
   outline: none;
-  transition: all .3s;
-  color: #ffff;
-  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
+  margin-bottom: 15px;
 }
 
-.label::before {
-  content: "";
-  height: 5px;
-  background-color: #272530;
+.input-container span {
   position: absolute;
-  left: 0;
-  top: 10px;
-  width: 100%;
-  z-index: -1;
+  z-index: 1;
+  left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
 }
 
-.text-input:valid+label{
-  top: -10px;
-  color: whitesmoke;
-  font-size: 14px;
-}
 
-.text-input:focus+.label, .filled {
-  top: -10px;
-  color: #00f10c;
-  font-size: 14px;
-}
-
-.text-input::placeholder {
-  font-size: 16px;
-  opacity: 0;
-  transition: all .3s;
-}
-
-.text-input:focus::placeholder {
-  opacity: 1;
-  animation-delay: 0.2s;
+.input-container input:valid ~ span,
+.input-container input:focus ~ span {
+  color: green;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65;
+  padding: 0 10px;
+  border-left: 1px solid green;
+  border-right: 1px solid green;
+  letter-spacing: 0.2em;
+  background: green;
+  color: black;
+  border-radius: 2px;
 }
 
 .content-table {
@@ -224,6 +212,10 @@ a {
   color: #009829;
 }
 
+h2 {
+  text-align: center;
+}
+
 .content-table2 {
   border-collapse: collapse;
   margin: 25px 0;
@@ -244,8 +236,8 @@ a {
   table-layout: fixed;
   border-style: solid;
   border-width: 3px;
-  border-radius: 13px;
-  margin-bottom: 100px;
+  border-radius: 20px;
+  margin-bottom: 55px;
 }
 
 .content-table2 thead tr {
@@ -255,8 +247,13 @@ a {
   font-weight: bold;
 }
 
+.content-table2 thead tr {
+ height: 60px;
+}
+
 .content-table2 thead tr th {
   border: 1px solid black;
+  text-align: center;
 }
 
 .content-table2 tbody tr td {
@@ -291,20 +288,118 @@ a {
 }
 
 footer {
-  height: 10%;
+  width: 33%;
+  height: 45px;
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
+  justify-content: center;
+  position: fixed;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  bottom: 0;
 }
 
 
 footer > p {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
+@media screen and (max-width: 768px) 
+{
+  .text1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    margin-bottom: -60px;
+  }
+  .content-table {
+    font-size: 0.8rem;
+    min-width: 328px;
+  }
+  footer {
+    font-size: 0.9rem;
+    width: 100%;
+    height: 40px;
+  }
+  .content-table2 {
+    min-width: 375px;
+  }
+  .content-table2 > thead > tr > th {
+    display: none;
+  }
+  .content-table2 > tbody > tr > td {
+    display: block;
+    text-align: right;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    border-spacing: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .content-table2 > tbody > tr > td::before {
+    content: attr(data-label);
+    display: inline;
+    float: left;
+    padding: 0px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: green;
+    color: black;
+    margin: -5px 0;
+    border: none;
+    width: 50%;
+    text-align: center;
+    border: 5px solid black;
+  }
+}
 
-
-
+@media screen and (max-width: 340px) 
+{
+  .text1 {
+    font-size: 2rem;
+  }
+  .content-table {
+    font-size: 0.69rem;
+    min-width: 200px;
+  }
+  footer {
+    width: 100%;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .content-table2 {
+    min-width: 320px;
+  }
+  .content-table2 > thead > tr > th {
+    display: none;
+  }
+  .content-table2 > tbody > tr > td {
+    display: block;
+    text-align: right;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    border-spacing: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .content-table2 > tbody > tr > td::before {
+    content: attr(data-label);
+    display: inline;
+    float: left;
+    padding: 0px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: green;
+    color: black;
+    margin: -5px 0;
+    border: none;
+    width: 50%;
+    text-align: center;
+    border: 5px solid black;
+  }
+}
