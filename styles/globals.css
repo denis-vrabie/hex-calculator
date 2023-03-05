@@ -73,6 +73,8 @@
   }
 }
 
+/* Websites */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -106,6 +108,8 @@ a {
   }
 }
 
+/* Website (index.js) */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -127,6 +131,8 @@ a {
   font-size: 3rem;
   text-shadow: 6px 6px 6px rgb(36, 129, 36);
 }
+
+/* Input */
 
 .input-container {
   position: relative;
@@ -158,7 +164,6 @@ a {
   transition: 0.5s;
 }
 
-
 .input-container input:valid ~ span,
 .input-container input:focus ~ span {
   color: green;
@@ -172,6 +177,8 @@ a {
   color: black;
   border-radius: 2px;
 }
+
+/* Overview of the result */
 
 .content-table {
   border-collapse: collapse;
@@ -211,6 +218,8 @@ a {
   font-weight: bold;
   color: #009829;
 }
+
+/* Distribution of a binary in the decimal */
 
 h2 {
   text-align: center;
@@ -287,6 +296,8 @@ h2 {
   background-color: rgba(8, 182, 5, 0.15);
 }
 
+/* Footer -- Who made it up */
+
 footer {
   width: 33%;
   height: 45px;
@@ -304,6 +315,8 @@ footer > p {
   flex: 1;
   text-align: center;
 }
+
+/* Responsive website */
 
 @media screen and (max-width: 768px) 
 {
