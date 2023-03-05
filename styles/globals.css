@@ -317,7 +317,7 @@ footer > p {
   }
   .content-table {
     font-size: 0.8rem;
-    min-width: 328px;
+    min-width: 100%;
   }
   footer {
     font-size: 0.9rem;
@@ -364,7 +364,7 @@ footer > p {
   }
   .content-table {
     font-size: 0.69rem;
-    min-width: 200px;
+    min-width: 100%;
   }
   footer {
     width: 100%;
